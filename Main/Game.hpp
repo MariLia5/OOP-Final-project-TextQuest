@@ -47,6 +47,7 @@ private:
 	const const char* Evidence0;
 	const const char* Sect;
 	const const char* Mother;
+	const const char* EndGame;
 
 public:
     Game();
@@ -92,6 +93,7 @@ public:
 	const const char* GetEnd2() const { return End2; };
 	const const char* GetSect() const { return Sect; };
 	const const char* GetMother() const { return Mother; };
+	const const char* GetEndGame() const { return EndGame; };
 	};
 
 #endif // GAME_HPP

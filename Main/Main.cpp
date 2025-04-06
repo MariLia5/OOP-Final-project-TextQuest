@@ -8,6 +8,8 @@ int main() {
 	int blood = 0;
 	int bone = 0;
 	int sms = 0;
+	int bijouterie = 0;
+
     Detective Mike;
     Game game;
 
@@ -28,6 +30,7 @@ int main() {
 		case 1: {
 			game.PrintText(game.GetDecoration1Observation1());
 			Mike.increaseObservation(1);
+			bijouterie = 1;
 			break;
 		}
 		case 2: {
@@ -49,9 +52,9 @@ int main() {
 		case 1: {
 			game.PrintText(game.GetDecoration2Tree());
 			int Act2;
-			std::cin >> Act1;
+			std::cin >> Act2;
 			if (Act2 == 1) {
-				int blood = 1;
+				blood = 1;
 			}
 			if (Act2 == 2) {}
 			break;
@@ -61,7 +64,7 @@ int main() {
 			int Act3;
 			std::cin >> Act3;
 			if (Act3 == 1) {
-				int bone = 1;
+				bone = 1;
 			}
 			if (Act3 == 2) {}
 			break;
@@ -77,6 +80,7 @@ int main() {
 	} while (Act1 != 1 && Act1 != 2 && Act1 != 3);
 
 	game.PrintText(game.GetDecoration3());
+
 	game.PrintText(game.GetCabinet2());
 	int Act4;
 	do {
@@ -94,7 +98,7 @@ int main() {
 			break;
 		}
 	  }
-	} while (Act0 != 1 && Act0 != 2);
+	} while (Act4 != 1 && Act4 != 2);
 
 	game.PrintText(game.GetCabinet3());
 
@@ -121,7 +125,7 @@ int main() {
 			break;
 		}
 		}
-	} while (Act0 != 1 && Act0 != 2);
+	} while (Act5 != 1 && Act5 != 2);
 
 	game.PrintText(game.GetFight1());
 		int Act6;
@@ -135,8 +139,8 @@ int main() {
 			game.PrintText(game.GetSwing());
 			Mike.takeDamage(1);
 			break;
-		}
-	}
+		  }
+	    }
 		game.PrintText(game.GetFight2());
 		int Act7;
 		std::cin >> Act7;
@@ -149,7 +153,7 @@ int main() {
 		case 2: {
 			game.PrintText(game.GetGrabhold());
 			break;
-		}
+		  }
 		}
 
 		game.PrintText(game.GetFight3());
@@ -164,10 +168,32 @@ int main() {
 			game.PrintText(game.GetWait());
 			Mike.takeDamage(1);
 			break;
-		}
+		  }
 		}
 
-		
+		if (Mike.getHP() <= 2) {
+			game.PrintText(game.GetEnd1());
+		}
+		else {
+			game.PrintText(game.GetEnd2());
+		}
+
+		if (Mike.getHP() > 2) {
+			if (bijouterie == 1) {
+				game.PrintText(game.GetEvidence1());
+			}
+
+			if (bijouterie == 0 && blood == 0 && bone == 0 && sms == 0) {
+				game.PrintText(game.GetEvidence0());
+			}
+			if (sms == 1) {
+				game.PrintText(game.GetMother());
+			}
+			if (bone == 1 || blood == 1) {
+				game.PrintText(game.GetMother());
+			}
+		}
+		game.PrintText(game.GetEndGame());
 
     return 0;
 }
