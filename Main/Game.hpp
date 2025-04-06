@@ -1,4 +1,4 @@
-#ifndef GAME_HPP
+п»ї#ifndef GAME_HPP
 #define GAME_HPP
 
 #include <iostream>
@@ -9,7 +9,7 @@ class Game {
 private:
     Detective* detective;
 
-    // Текстовые константы как обычные члены класса
+    // РўРµРєСЃС‚РѕРІС‹Рµ РєРѕРЅСЃС‚Р°РЅС‚С‹ РєР°Рє РѕР±С‹С‡РЅС‹Рµ С‡Р»РµРЅС‹ РєР»Р°СЃСЃР°
     const char* Start;
     const char* Cabinet1;
     const char* JermaineOMalley1;

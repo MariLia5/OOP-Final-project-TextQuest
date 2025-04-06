@@ -1,13 +1,13 @@
-#include "Detective.hpp"
+п»ї#include "Detective.hpp"
 #include <iostream>
 
-// Конструктор по умолчанию
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 Detective::Detective() :
-    name("Майк Джонс"),
+    name("РњР°Р№Рє Р”Р¶РѕРЅСЃ"),
     hp(5),
     observation(0) {}
 
-// Конструктор с параметрами
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 Detective::Detective(const std::string& name,
     int hp, int observation) :
     name(name),
@@ -15,15 +15,15 @@ Detective::Detective(const std::string& name,
     observation(observation)
 {}
 
-// Деструктор
+// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 Detective::~Detective() {}
 
-// Геттер
+// Р“РµС‚С‚РµСЂ
 std::string Detective::getName() const { return name; }
 int Detective::getHP() const { return hp; }
 int Detective::getObservation() const { return observation; }
 
-// Сеттер
+// РЎРµС‚С‚РµСЂ
 void Detective::takeDamage(int damage) {
     hp -= damage;
     if (hp < 0) hp = 0;
@@ -33,10 +33,10 @@ void Detective::heal(int amount) { hp += amount; }
 
 void Detective::increaseObservation(int amount) { observation += amount; }
 
-// Отображение информации
+// РћС‚РѕР±СЂР°Р¶РµРЅРёРµ РёРЅС„РѕСЂРјР°С†РёРё
 void Detective::displayInfo() const {
-    std::cout << "=== Характеристики детектива ===\n";
-    std::cout << "Имя: " << name << "\n";
-    std::cout << "Здоровье: " << hp << "\n";
-    std::cout << "Наблюдательность: " << observation << "\n";
+    std::cout << "=== РҐР°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё РґРµС‚РµРєС‚РёРІР° ===\n";
+    std::cout << "РРјСЏ: " << name << "\n";
+    std::cout << "Р—РґРѕСЂРѕРІСЊРµ: " << hp << "\n";
+    std::cout << "РќР°Р±Р»СЋРґР°С‚РµР»СЊРЅРѕСЃС‚СЊ: " << observation << "\n";
 }
